@@ -78,7 +78,8 @@ else
                     <div class="form-group">
                         <button type="submit" name="submit" class="btn btn-primary btn-lg">Add Post</button>
                         <button type="reset" name ="reset" class="btn btn-danger btn-lg">Reset</button>
-                        </div>
+                        <a href="view_post.php"></a>
+                  </div>
 
 
 
