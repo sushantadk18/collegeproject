@@ -95,7 +95,7 @@ else
                         <td><?php echo $d ?></td>
                         <td><?php echo $e ?></td>
                         <td><a href="edit.php?id=<?php echo $a; ?>&fname=<?php echo $b ?> &lname=<?php echo $c ?>&username=<?php echo $d ?>&password=<?php echo $e ?>  ">Edit</a></td>
-                        <td><a href="delete.php">Delete</a></td>
+                        <td><a href="delete.php?Del=<?php echo $a ; ?>">Delete</a></td>
 
                         
                     </tr>
