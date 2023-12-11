@@ -52,63 +52,40 @@ else
             <a href="upload-photo.php" class="btn btn-dark btn-block text-light">Upload Image</a>
             <a href="upload-video.php" class="btn btn-dark btn-block text-light">Upload Video</a>
           </div>
-          
           <div class="col-md-8">
-            <h1>Add new post</h1>
-            <div class="col-md-8">
-                <!-- title  -->
-                <form action="" method="post" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="title">Post Title:</label>
-                    <input type="text" name="title" class="form-control" placeholder="Enter the title of your post here..." required>
-                </div>
-                <!-- content -->
-                <div class="form-group">
-                  <label for="">Content:</label>
-                  <textarea class="form-control" name="content" placeholder="Post Title" rows="3"></textarea>
-                </div>
+            <h1>View all posts</h1>
+            <hr>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <?php
+                        //CONNECTION
 
-                
-            
-            
-                <div class="form-group">
-                    <label for="upload">Upload Image</label>
-                    <input type="file" name="image" class="form-control-file" id="upload">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" name="submit" class="btn btn-primary btn-lg">Add Post</button>
-                        <button type="reset" name ="reset" class="btn btn-danger btn-lg">Reset</button>
-                        <a href="view_post.php" class="btn btn-primary btn-lg">View</a>
-                  </div>
+                        //QUERY
+
+                        //RUN
 
 
-
-            </form>
-            <!-- php start -->
-            <?php
-            //database connection
-            include '../connection.php';
-            if(isset($_POST['submit'])){
-                $title=$_POST['title'];
-                $content = $_POST['content'];
-                $image_name = $_FILES['image']['name'];
-                $image_type = $_FILES['image']['type'];
-                // $image_size = $_FILES['image']['size'];
-                $image_tmp= $_FILES['image']['tmp_name'];
-                $query ="insert into posts(title,content,image)values('$title','$content','$image_name')";
-                $run=mysqli_query($conn,$query);
-               
-               if($run){
-                move_uploaded_file("$image_tmp","../assets/images/$image_name");
-                echo "<script>window.alert('Image Uploaded Successfully')</script>";
-               }
-               else{
-                echo "<script>window.alert('Image Not Uploaded')</script>";
-                }
-            }
-            ?>
-            
-            <!-- php end -->
+                        //LOOP
+                        ?>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td scope="row"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
           </div>
         </div>
       </div>
